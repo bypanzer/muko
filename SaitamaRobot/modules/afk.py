@@ -36,7 +36,7 @@ def afk(update: Update, context: CallbackContext):
     sql.set_afk(update.effective_user.id, reason)
     fname = update.effective_user.first_name
     try:
-        update.effective_message.reply_text("{} artıq burada deyil!{}".format(
+        update.effective_message.reply_text("{} artıq bizimlə deyil!{}".format(
             fname, notice))
     except BadRequest:
         pass
@@ -57,9 +57,14 @@ def no_longer_afk(update: Update, context: CallbackContext):
         firstname = update.effective_user.first_name
         try:
             options = [
-                '{} buradadır!', '{} geri qayıtdı!', '{} artıq qrupdadır!',
-                '{} onlayndır!', '{} artıq onlayndır!', '{} axırki buradadır!',
-                'Xoşgəldin! {}', '{} haradadır?\nHaa qrupdaymış!'
+                "{} buradadır!",
+                "{} geri döndü!",
+                "{} indi söhbətdədir!",
+                "{} oyaqdır!",
+                "{} yenidən onlayndır!",
+                "Nəhayət ki {} buradadır!",
+                "Xoş gəldin! {}",
+                "{} Hardasan? \n Aha burada  imiş!"
             ]
             chosen_option = random.choice(options)
             update.effective_message.reply_text(chosen_option.format(firstname))
@@ -136,8 +141,8 @@ def check_afk(update, context, user_id, fst_name, userc_id):
 
 __help__ = """
  • `/afk <səbəb>`*:* sizi afk olaraq qeyd edər.
- • `afk <səbəb>`*:* yuxarıdakı ilə eyni əmrdir amma əmr deyil.
-Siz afk olanda kimsə sizi tag etsə, reply atsa bot ona cavab verəcəy
+ • `afk <səbəb>`*:* afk komandası ilə eynidi amma əmr deyil.
+Siz afk olanda kimsə sizi tag etsə, reply atsa bot ona burada olmadığınızı bildirəcək
 """
 
 AFK_HANDLER = DisableAbleCommandHandler("afk", afk)
