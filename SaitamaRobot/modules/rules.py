@@ -27,7 +27,7 @@ def send_rules(update, chat_id, from_pm=False):
         if excp.message == "Chat not found" and from_pm:
             bot.send_message(
                 user.id,
-                "Heç bir qayda filan yoxdur. Bəlkə də bu heç qrup deyil.")
+                "Heç bir qayda  yoxdur. Bəlkə də bu heç qrup deyil.")
             return
         else:
             raise
