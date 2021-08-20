@@ -338,7 +338,7 @@ def kang(update: Update, context: CallbackContext):
                 )
             print(e)
     else:
-        packs = "Zəhmət olmasa bir şəkil və ya stikerə yanıt ver!\nOh yeri gəlmişkən aşağıdakılar sənin paketlərindir:\n"
+        packs = "Zəhmət olmasa bir şəkil və ya stikerə yanıt ver!\nBu arada,aşağıdakılar sənin paketlərindir:\n"
         if packnum > 0:
             firstpackname = "a" + str(user.id) + "_by_" + context.bot.username
             for i in range(0, packnum + 1):
