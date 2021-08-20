@@ -24,7 +24,7 @@ DEFAULT_WELCOME_MESSAGES = [
     "Bizdə səni gözləyirdik {first} .",  
     "Aramıza Xoşgəldin {first}.",
     "Artıq sən də bizdənsən {first}",
-    "Göydən nəsə düşdü,Aha bu {first}-dir,
+    "Göydən nəsə düşdü,Aha bu {first}-dir.",
     "Hey {first}, Parolu de",
     "{first} prezidentin əmriylə bizə qoşuldu",
     "Bəylər və xanımlar mən sizə {first}-i təqdim edirəm",
