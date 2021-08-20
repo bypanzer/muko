@@ -12,27 +12,36 @@ DEFAULT_GOODBYE = 'Get və gəlmə!'
 
 DEFAULT_WELCOME_MESSAGES = [
     "{first} buradadır!",  #Discord welcome messages copied
-    "Oyunçu {first} hazırdır",
-    "Vəhşi {first} gəldi.",
+    "{first} artıq hazırdır",
+    "Canavar {first} gəldi.",
     "{first} bir şir kimi gəldi!",
-    "{first} partimizə qoşuldu.",
-    "Xoşgəldin, {first}. Pizza gətirəcəyivi düşnürdük.",
-    "Xoşgəldin, {first}. Silahlarıvı qapıda qoy.",
+    "{first} bizə qoşuldu.",
+    "{first} indicə gəldi. Çox həyəcanlıyam"
+    "Xoşgəldin, {first}. Özün kimi möhtəşəm bir giriş etdin.",
+    "Xoşgəldin, {first}. Sakitcə dayan və dinlə.",
     "{first} haradadır? Haa qrupdaymış!",
     "Hey! Millət qulaq asın! {first} indicə bizə qoşuldu!",
-    "{first} Qoşuldu! - Ok.",  #Discord welcome messages end.
+    "Bizdə səni gözləyirdik {first} .",  
     "Aramıza Xoşgəldin {first}.",
     "Artıq sən də bizdənsən {first}",
+    "Göydən nəsə düşdü,Aha bu {first}-dir,
+    "Hey {first}, Parolu de",
+    "{first} prezidentin əmriylə bizə qoşuldu",
+    "Bəylər və xanımlar mən sizə {first}-i təqdim edirəm",
+    "Hey {first},yarışaq?",
 ]
 DEFAULT_GOODBYE_MESSAGES = [
-    "{first} lobby tərk etdi.",
+    "{first} lobini tərk etdi.",
     "{first} klanı tərk etdi.",
     "{first} oyunu tərk etdi.",
     "Səni yaxşı tanıyırdım, {first}!",
     "Gözəl zaman keçirdik {first}.",
     "Tezliklə görüşmək ümidi ilə, {first}.",
     "Əlvida, {first}.",
-    "Goodbye {first}! Guess who's gonna miss you :')",
+    "Bizi tərk etdin, {first}? Bu çox kədərləndiricidi.",
+    "Getmə...,Səndə bu dünyadakı hərşey kimi müvəqqəti imişsən.",
+    "Hələlik {first},xatirələrdə yaşayacaqsan.",
+    "Sən tək getmədin {first},özünlə qrupun şənliyini də apardın.",
 ]
 # Line 111 to 152 are references from https://bindingofisaac.fandom.com/wiki/Fortune_Telling_Machine
 
