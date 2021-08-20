@@ -124,8 +124,8 @@ def extract_unt_fedban(message: Message,
         user_id = get_user_id(user)
         if not user_id and not isinstance(user_id, int):
             message.reply_text(
-                "Bu istifadəçi mənim database-də yoxdur.  "
-                "Hansısa mesajına yanıt verməyi yoxla."
+                "Bu istifadəçi mənim  verilənlər bazamda yoxdur.  "
+                "Hansısa mesajına yanıt ver və yenidən yoxla."
             )
             return None, None
 
