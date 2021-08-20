@@ -188,7 +188,7 @@ def cmd_get(update: Update, context: CallbackContext):
     elif len(args) >= 1:
         get(update, context, args[0].lower(), show_none=True)
     else:
-        update.effective_message.reply_text("Zibili çıxdı")
+        update.effective_message.reply_text("1 xəta baş verdi")
 
 
 @run_async
@@ -212,7 +212,7 @@ def slash_get(update: Update, context: CallbackContext):
         note_name = str(noteid).strip(">").split()[1]
         get(update, context, note_name, show_none=False)
     except IndexError:
-        update.effective_message.reply_text("Xətalı not ID 😾")
+        update.effective_message.reply_text("Xətalı not ID 🙆")
 
 
 @run_async
@@ -241,7 +241,7 @@ def save(update: Update, context: CallbackContext):
                 "Bir mesajı botdan saxlamağa çalışdığınıza bənzəyir. Təəssüf ki, botlar bot mesajlarını ötürə bilmir, ona görə də dəqiq mesajı saxlaya bilmirəm, bacardığım bütün mətni saxlayacağam, amma daha çoxunu istəyirsinizsə, mesajı özünüz ötürməlisiniz, sonra da saxlamalısınız.")
         else:
             msg.reply_text(
-                "Botlar telegramla əlil olur və botların digər botlarla qarşılıqlı əlaqəsini çətinləşdirir, ona görə də bu mesajı adət etdiyim kimi saxlaya bilmirəm - göndərməyiniz və sonra yeni mesajı yadda saxlamağınız varmı? Təşəkkürlər!")
+                "Botlar telegramla əlil olur və botların digər botlarla qarşılıqlı əlaqəsini çətinləşdirir, ona görə də bu mesajı adət etdiyim kimi saxlaya bilmirəm -  mesajə özünüz göndərməyin və sonra yeni mesajı yadda saxlamağınız mümkündür? Təşəkkürlər!")
         return
 
 
@@ -460,7 +460,7 @@ def __import_data__(chat_id, data):
                 chat_id,
                 document=output,
                 filename="failed_imports.txt",
-                caption="Bu fayllar/.əkillər başqa bir botdan qaynaqlandığına görə idxal edilmədi. Bu telegram API məhdudlaşdırmasıdır və qarşısını almaq mümkün deyil. Narahatlığa görə üzr istəyirik!",
+                caption="Bu fayllar başqa bir botdan qaynaqlandığına görə idxal edilmədi. Bu telegram API məhdudlaşdırmasıdır və qarşısını almaq mümkün deyil. Narahatçılığa görə üzr istəyirik!",
             )
 
 
