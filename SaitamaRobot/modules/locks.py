@@ -476,7 +476,7 @@ def del_lockables(update, context):
                         if not is_bot_admin(chat, context.bot.id):
                             send_message(
                                 update.effective_message,
-                                "Qrupa bot gəldiyini gördüm amma admin olmadığıma görə onu qrupdan ata bilmədim!",
+                                "Qrupa bot daxil olduğunu görürəm amma onu qrupdan ata bilməyəcəm,çünki admin deyiləm!",
                             )
                             return
 
@@ -618,22 +618,21 @@ You're in the right place!
 The locks module allows you to lock away some common items in the \
 telegram world; the bot will automatically delete them!
 
- • `/locktypes`*:* Lists all possible locktypes
+ • `/locktypes`*:* Bütün mümkün kilid növlərini göstərər.
  
 *Admins only:*
- • `/lock <type>`*:* Lock items of a certain type (not available in private)
- • `/unlock <type>`*:* Unlock items of a certain type (not available in private)
- • `/locks`*:* The current list of locks in this chat.
+ • `/lock <type>`*:* Müəyyən icazələri kilidləyər (şəxsi mesajda əlçatan deyil)
+ • `/unlock <type>`*:* Müəyyən kilidləri yenidən açar (şəxsi mesajda əlçatan deyil)
+ • `/locks`*:* Söhbətdəki mövcud kilidlərin siyahısı.
  
-Locks can be used to restrict a group's users.
-eg:
-Locking urls will auto-delete all messages with urls, locking stickers will restrict all \
-non-admin users from sending stickers, etc.
-Locking bots will stop non-admins from adding bots to the chat.
+Kilidlər qrup istifadəçilərini məhdudiyyət tətbiq etmək üşün istifadə edilə bilir.
+Məsələn:
+Linkləri kilidləsən linki mesajlar silinəcək, stikerlər kilidlənsə admin olmayan istifadəçilərin  stiker göndərməyi məhdudlaşdırılacaq. \
+Botkarı kilidləsən admin olmahan istifadəçilərin qrupa bot əlavə etməsi qadağan ediləcək.
 
-*Note:*
- • Unlocking permission *info* will allow members (non-admins) to change the group information, such as the description or the group name
- • Unlocking permission *pin* will allow members (non-admins) to pinned a message in a group
+*Qeyd:*
+ • Əgər *Qrup Məlumatını dəyişmə*  icazəsini açsan bu üzvlərə (admin olmayanlar) qrup məlumatını,adını habelə qrup təsvirini dəyişməyə imkan verəcək.
+ • Əgər *Sabitləmə* icazəsini açsan bu üzvlərə (admin olmayanlar) to qrupda mesaj sabitləməyə icazə verəcək.
 """
 
 __mod_name__ = "Locks"
