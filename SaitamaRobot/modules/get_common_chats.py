@@ -16,11 +16,11 @@ def get_user_common_chats(update: Update, context: CallbackContext):
     msg = update.effective_message
     user = extract_user(msg, args)
     if not user:
-        msg.reply_text("Boşluq ilə heç bir ortaq qrupumda deyiləm.")
+        msg.reply_text("Təssüf ki,boşluq ilə heç bir ortaq qrupum yoxdur.")
         return
     common_list = get_user_com_chats(user)
     if not common_list:
-        msg.reply_text("Bu istifadəçi ilə heç bir ortaq qrupda deyiləm!")
+        msg.reply_text("Təəssüf ki,bu istifadəçi ilə heç bir ortaq qrupum yoxdur!")
         return
     name = bot.get_chat(user).first_name
     text = f"<b>{name} ilə ortaq qruplarım</b>\n"
