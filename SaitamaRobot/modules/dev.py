@@ -18,12 +18,12 @@ def leave(update: Update, context: CallbackContext):
         chat_id = str(args[0])
         try:
             bot.leave_chat(int(chat_id))
-            update.effective_message.reply_text("Qrupu tərk etdim!.")
+            update.effective_message.reply_text("Əlvida,qrupu tərk edirəm.")
         except TelegramError:
             update.effective_message.reply_text(
-                "Əməliyyat uğursuz oldu.")
+                "Təssüf,Əməliyyat uğursuz oldu.")
     else:
-        update.effective_message.reply_text("Keçərli qrup ID ver")
+        update.effective_message.reply_text("Zəhmət olmasa,keçərli 1 qrup ID-si ver")
 
 
 @run_async
@@ -39,7 +39,7 @@ def gitpull(update: Update, context: CallbackContext):
         sent_msg.edit_text(sent_msg_text + str(i + 1))
         sleep(1)
 
-    sent_msg.edit_text("Yenidən başladıldı.")
+    sent_msg.edit_text("Uğurla yenidən başladıldı.")
 
     os.system('restart.bat')
     os.execv('start.bat', sys.argv)
