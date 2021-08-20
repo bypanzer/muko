@@ -52,20 +52,20 @@ def get_readable_time(seconds: int) -> str:
 
 PM_START_TEXT = """
 Salam {} necəsən? mənim adım {}! 
-Mən DTÖ Qruplarının Yaxud Sənin Qruplarıvı Qorumaq üçün Azərbaycanca Olan Qrup İdarə Botuyam!.
+Mən TDD qruplarını,həmçinin sənin qruplarını qorumaq üçün Azərbaycanca olan Qrup İdarə Botuyam!.
 Bütün əmrlər üçün klik et /help.
 """
 
 HELP_STRINGS = """
 Salamlar! Mənim adım *{}*.
-Mənimlə birlikdə qruplarınızı idarə edə bilərsiniz!.
+Mənimlə birlikdə qruplarınızı idarə edə bilərsən!.
 
 *Əsas* əmrlər:
  • /help: Kömək menyusu.
  • /help <modul adı>: müəyyən modul haqqında məlumat verir.
  • /settings:
-   • PM-də : ayarları göstərir.
-   • qrupda: qrup ayarlarını göstərir.
+   • PM-də : parametrləri göstərir.
+   • qrupda: qrup parametrlərini göstərir.
 
 
 {}
@@ -76,7 +76,7 @@ Və aşağıdakılar:
 
 SAITAMA_IMG = "https://telegra.ph/file/a72675a4c422a426d748d.jpg"
 
-DONATE_STRING = """Bəxşişə ehtiyyac yoxdu təşəkkürlər."""
+DONATE_STRING = """Çox ürəyiaçıq birisən🙆,ama buna ehtiyac yoxdu, təşəkkürlər 🤍."""
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -194,26 +194,26 @@ def start(update: Update, context: CallbackContext):
                 reply_markup=InlineKeyboardMarkup(
                     [[
                         InlineKeyboardButton(
-                            text="☑️ DTÖ botu qruplarınıza əlavə edin",
+                            text="✅ Yupiter botu qruplarınıza əlavə edin",
                             url="t.me/{}?startgroup=true".format(
                                 context.bot.username))
                     ],
                      [
                          InlineKeyboardButton(
                              text="👨‍💻 Sahibim",
-                             url=f"https://t.me/bakinech"),
+                             url=f"https://t.me/sammekkim"),
                          InlineKeyboardButton(
                              text="🔔 Yeniliklər kanalı",
-                             url="https://t.me/DTONezaretNews")
+                             url="https://t.me/JLBOTS")
                     ],
                      [
                          InlineKeyboardButton(
                              text="🚑 Dəstək Qrupumuz",
-                             url=f"https://t.me/DTONezaretSupport")
+                             url=f"https://t.me/JLBchat")
                      ]]))
     else:
         update.effective_message.reply_text(
-            "Salam Mən DTÖ NƏZARƏTÇİ Xidmətinizdəyəm!"
+            "Salam ,Mən Yupiter Nəzarətçi, Xidmətinizdəyəm!"
             .format(uptime),
             parse_mode=ParseMode.HTML)
 
@@ -430,7 +430,7 @@ def settings_button(update: Update, context: CallbackContext):
             chat_id = back_match.group(1)
             chat = bot.get_chat(chat_id)
             query.message.reply_text(
-                text="Salamlar! {} qrupunun ayarları mövcuddur və sən "
+                text="Salamlar! {} qrupunun parametrləri mövcuddur və sən "
                 "istədiyinə baxa bilərsən.".format(escape_markdown(chat.title)),
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(
@@ -460,17 +460,17 @@ def get_settings(update: Update, context: CallbackContext):
     # ONLY send settings in PM
     if chat.type != chat.PRIVATE:
         if is_user_admin(chat, user.id):
-            text = "Ayarlara baxmaq üçün kliklə."
+            text = "Parametrlərə baxmaq üçün kliklə."
             msg.reply_text(
                 text,
                 reply_markup=InlineKeyboardMarkup([[
                     InlineKeyboardButton(
-                        text="Ayarlar",
+                        text="Parametrlər",
                         url="t.me/{}?start=stngs_{}".format(
                             context.bot.username, chat.id))
                 ]]))
         else:
-            text = "Ayarlarıva baxmaq üçün kliklə."
+            text = "Parametrlərə baxmaq üçün kliklə."
 
     else:
         send_settings(chat.id, user.id, True)
@@ -531,7 +531,7 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "Mən hazırda onlaynam!")
+            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "Mən hazırda işlək vəziyyətdəyəm!")
         except Unauthorized:
             LOGGER.warning(
                 "Bot isnt able to send message to support_chat, go and check!")
