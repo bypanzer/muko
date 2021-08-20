@@ -95,8 +95,7 @@ def send(update, message, keyboard, backup_message):
             msg = update.effective_message.reply_text(
                 markdown_parser(backup_message +
                                 "\nQeyd: Mesajda Telegram tərəfindən dəstəklənməyən url protokollarından"
-                                "istifadə edən düymələr var. protocols that are unsupported by "
-                                "telegram. Please update."),
+                                "istifadə edən düymələr var. Zəhmət olmasa yeniləyin."),
                 parse_mode=ParseMode.MARKDOWN,
                 reply_to_message_id=reply,
             )
@@ -111,8 +110,8 @@ def send(update, message, keyboard, backup_message):
             )
             LOGGER.warning(message)
             LOGGER.warning(keyboard)
-            LOGGER.exception("Could not parse! got invalid url host errors")
-        elif excp.message == "Have no rights to send a message":
+            LOGGER.exception("Could not parse! got invalid url host errors ")
+        elif excp.message == "Mesaj göndərmək hüququna malik deyiləm":
             return
         else:
             msg = update.effective_message.reply_text(
@@ -171,17 +170,17 @@ def new_member(update: Update, context: CallbackContext):
             # Give the owner a special welcome
             if new_mem.id == OWNER_ID:
                 update.effective_message.reply_text(
-                    "Wow Sahibim gəldi😎.",
+                    "Diqqət👽 Sahibim gəldi👤.",
                     reply_to_message_id=reply)
                 welcome_log = (f"{html.escape(chat.title)}\n"
                                f"#USER_JOINED\n"
-                               f"yuppi Muko usta gəldi")
+                               f"Şşş!Sahibim burdadı.")
                 continue
 
             # Welcome Devs
             elif new_mem.id in DEV_USERS:
                 update.effective_message.reply_text(
-                    "Vau! Böyük şəxsiyyətlərdən biri developerim gəldi!",
+                    "Aman tanrım! Proqramistlərimdən biri gəldi!",
                     reply_to_message_id=reply,
                 )
                 continue
@@ -189,7 +188,7 @@ def new_member(update: Update, context: CallbackContext):
             # Welcome Sudos
             elif new_mem.id in DRAGONS:
                 update.effective_message.reply_text(
-                    "2 ci Sahibim Gəldi😎",
+                    "Digər sahibim gəldi 👩‍💻",
                     reply_to_message_id=reply,
                 )
                 continue
@@ -197,7 +196,7 @@ def new_member(update: Update, context: CallbackContext):
             # Welcome Support
             elif new_mem.id in DEMONS:
                 update.effective_message.reply_text(
-                    "Şeytan gəldi😈!",
+                    "Şeytan aramızdadı😈!",
                     reply_to_message_id=reply,
                 )
                 continue
@@ -205,14 +204,14 @@ def new_member(update: Update, context: CallbackContext):
             # Welcome Whitelisted
             elif new_mem.id in TIGERS:
                 update.effective_message.reply_text(
-                    "Oof! Pələng də buradadır!",
+                    "Aha! Pələng də buradadır!",
                     reply_to_message_id=reply)
                 continue
 
             # Welcome Tigers
             elif new_mem.id in WOLVES:
                 update.effective_message.reply_text(
-                    "Oof! Canavarımız xoşgəldi!",
+                    "Wow! Canavar, xoş gəldin!",
                     reply_to_message_id=reply)
                 continue
 
@@ -357,10 +356,10 @@ def new_member(update: Update, context: CallbackContext):
                         })
                     new_join_mem = f'<a href="tg://user?id={user.id}">{html.escape(new_mem.first_name)}</a>'
                     message = msg.reply_text(
-                        f"{new_join_mem}, Robot olmadığınızı təsdiqləmək üçün aşağıdakı düyməyə vurun\n120 saniyən var, Fake'ləri sevmirəm ;).",
+                        f"{new_join_mem}, Robot olmadığını təsdiqləmək üçün aşağıdakı düyməyə vur\n120 saniyən var, Əgər təsdiqləməsən bir daha yaza bilməyəcəksən. Saxta hesabları heç sevmirəm ;).",
                         reply_markup=InlineKeyboardMarkup([{
                             InlineKeyboardButton(
-                                text="Bəli, mən insanam",
+                                text="Bəli, mən insanam🙋",
                                 callback_data=f"user_join_({new_mem.id})",
                             )
                         }]),
@@ -433,7 +432,7 @@ def check_not_bot(member, chat_id, message_id, context):
 
         try:
             bot.edit_message_text(
-                "Qrupdan atıram\nİstənilən vaxt yenidən qoşula bilər.",
+                "Qrupdan atıldı\nİstənilən vaxt yenidən qoşula bilər.",
                 chat_id=chat_id,
                 message_id=message_id,
             )
@@ -802,7 +801,7 @@ def clean_welcome(update: Update, context: CallbackContext) -> str:
         clean_pref = sql.get_clean_pref(chat.id)
         if clean_pref:
             update.effective_message.reply_text(
-                "İki günə qədər salamlama mesajlarını silməyim lazımdır.")
+                "İki günə qədər salamlama mesajlarını silməliyəm.")
         else:
             update.effective_message.reply_text(
                 "Köhnə qarşılama mesajlarını silmirəm!")
@@ -811,7 +810,7 @@ def clean_welcome(update: Update, context: CallbackContext) -> str:
     if args[0].lower() in ("on", "yes"):
         sql.set_clean_welcome(str(chat.id), True)
         update.effective_message.reply_text(
-            "Köhnə qarşılama mesajlarını siləcəm!")
+            "Köhnə qarşılama mesajlarını siləcəyəm!")
         return (f"<b>{html.escape(chat.title)}:</b>\n"
                 f"#CLEAN_WELCOME\n"
                 f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
@@ -934,20 +933,20 @@ WELC_HELP_TXT = (
     " • `{fullname}`*:* istifadəçinin adı və soyadı\n"
     " • `{username}`*:* istifadəçinin username-i\n"
     " • `{mention}`*:* istifadəçini adı ilə tag edir\n"
-    " • `{id}`*:* istifadəçinin id göstərir\n"
+    " • `{id}`*:* istifadəçinin İD-ini göstərir\n"
     " • `{count}`*:* istifadəçinin üzv nömrəsini göstərir.\n"
-    " • `{chatname}`*:* qrup adını göstərir\n"
+    " • `{chatname}`*:* qrupun adını göstərir\n"
     f"Linkli button da əlavə etmək olar. Məsələn: `[Qaydalar](buttonurl://t.me/{dispatcher.bot.username}?start=group_id)`. "
     "`group_id` yerinə öz qrupunuzun id yazın,  "
-    "Qrup id - ilə başlamalıdır.")
+    "Group id - ilə başlamalıdır.")
 
 WELC_MUTE_HELP_TXT = (
-    "Bu bot qrupa qoşulanları avtomatik sudura da bilir. Doğrulama testini etdikdən sonra səsləri avtomatik açılır. "
+    "Bu bot qrupa qoşulanları avtomatik susdura da bilir. Doğrulama testini etdikdən sonra səsləri avtomatik açılır. "
     "Mövcud əmrlər:\n"
-    "• `/welcomemute soft`*:* yeni qoşulanlar 24 saatlığına media höndərə bilmirlər.\n"
+    "• `/welcomemute soft`*:* yeni qoşulanlar 24 saatlığına media göndərə bilmirlər.\n"
     "• `/welcomemute strong`*:* qrupa yeni qoşulanlar buttona basana qədər səssizləşdirilir.\n"
     "• `/welcomemute off`*:* səssizə almanı deaktiv edir.\n"
-    "*Qryd:* Strong odu aktiv olduğunda qrupa yeni qoşulanlar 120 saniyə ərzində butona basmasalar qtupdan atılır. İstənilən vaxt yenidən qoşula bilər"
+    "*Qryd:* Strong modu aktiv olduğunda qrupa yeni qoşulanlar 120 saniyə ərzində butona basmasalar qrupdan atılır. İstənilən vaxt yenidən qoşula bilər"
 )
 
 
@@ -994,13 +993,13 @@ __help__ = """
  • `/welcome <on/off>`*:* Qarşılama mesajlarını açar/bağlayar .
  • `/welcome`*:* hazırki qarşılama mesajı ayarlarını göstərər.
  • `/welcome noformat`*:* qarşılama mesajını formatsız göstərir!
- • `/goodbye`*:* `/welcome` ilə eyni.
+ • `/goodbye`*:* Hazırkı vida mesajının parametrlərini göstərər.
  • `/setwelcome <mətn>`*:* qarşılama mesajı edir. Əgər media'a cavab olaraq istifadə etsəniz media'nı xoşgəldin mesajı olaraq qeyd edər.
  • `/setgoodbye <mətn>`*:* Xüsusi bir vida mesajı təyin edin. Əgər media'a cavab olaraq istifadə etsəniz media'nı vida mesajı olaraq qeyd edər.
- • `/resetwelcome`*:* Xoşgəldin mesajını default vəziyyətinə qaytarar.
- • `/resetgoodbye`*:* Vida mesajını default vəziyyətinə qaytarar.
- • `/cleanwelcome <on/off>`*:* Qrupa eyni zamanda çox üzv qatıldıq da xoşgəldin mesajı spamı olmamasına üçün köhnə mesajı silər.
- • `/welcomemutehelp`*:* gives information about welcome mutes.
+ • `/resetwelcome`*:* Xoşgəldin mesajını əvvəlki vəziyyətinə qaytarar.
+ • `/resetgoodbye`*:* Vida mesajını əvvəlki vəziyyətinə qaytarar.
+ • `/cleanwelcome <on/off>`*:* Qrupa eyni zamanda çox üzv qatıldıq da xoşgəldin mesajı spamı olmaması üçün köhnə mesajı silər.
+ • `/welcomemutehelp`*:* Xoşgəldin mesajının susdurulması haqqında məlumat verər..
  • `/cleanservice <on/off>`*:* Telegramın welcome/left servis mesajlarını açar/bağlıyar. 
  *Nümunə:*
 user qrupa qatıldı, user qrupu tərk etdi.
