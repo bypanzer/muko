@@ -613,10 +613,10 @@ def __chat_settings__(chat_id, user_id):
 
 
 __help__ = """
-Do stickers annoy you? or want to avoid people sharing links? or pictures? \
-You're in the right place!
-The locks module allows you to lock away some common items in the \
-telegram world; the bot will automatically delete them!
+Etiketlər səni narahat edir? Və ya insanların bağlantı paylaşmasından qaçınmaq istəyirsən? yoxsa şəkillər? \
+Elə isə doğru yerdəsən!
+Kilidlər modulu, bəzi ümumi elementləri bağlamağa imkan verir.
+Teleqram dünyası; Bot onları avtomatik olaraq siləcək✅
 
  • `/locktypes`*:* Bütün mümkün kilid növlərini göstərər.
  
@@ -625,14 +625,14 @@ telegram world; the bot will automatically delete them!
  • `/unlock <type>`*:* Müəyyən kilidləri yenidən açar (şəxsi mesajda əlçatan deyil)
  • `/locks`*:* Söhbətdəki mövcud kilidlərin siyahısı.
  
-Kilidlər qrup istifadəçilərini məhdudiyyət tətbiq etmək üşün istifadə edilə bilir.
+Kilidlər qrup istifadəçilərinə məhdudiyyət tətbiq etmək üçün istifadə edilə bilir.
 Məsələn:
-Linkləri kilidləsən linki mesajlar silinəcək, stikerlər kilidlənsə admin olmayan istifadəçilərin  stiker göndərməyi məhdudlaşdırılacaq. \
-Botkarı kilidləsən admin olmahan istifadəçilərin qrupa bot əlavə etməsi qadağan ediləcək.
+*Linkləri* kilidləsən linkli mesajlar silinəcək, stikerlər kilidlənsə admin olmayan istifadəçilərin  stiker göndərməyi məhdudlaşdırılacaq.\
+*Botları* kilidləsən admin olmayan istifadəçilərin qrupa bot əlavə etməsi qadağan ediləcək.
 
 *Qeyd:*
  • Əgər *Qrup Məlumatını dəyişmə*  icazəsini açsan bu üzvlərə (admin olmayanlar) qrup məlumatını,adını habelə qrup təsvirini dəyişməyə imkan verəcək.
- • Əgər *Sabitləmə* icazəsini açsan bu üzvlərə (admin olmayanlar) to qrupda mesaj sabitləməyə icazə verəcək.
+ • Əgər *Sabitləmə* icazəsini açsan bu üzvlərə (admin olmayanlar) qrupda mesaj sabitləməyə icazə verəcək.
 """
 
 __mod_name__ = "Locks"
