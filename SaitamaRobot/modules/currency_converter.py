@@ -24,8 +24,7 @@ def convert(update: Update, context: CallbackContext):
                        f"?function=CURRENCY_EXCHANGE_RATE"
                        f"&from_currency={orig_cur}"
                        f"&to_currency={new_cur}"
-                       f"&apikey={CASH_API_KEY}")
-        response = requests.get(request_url).json()
+                       f"&apikey={GISXNJZU0VOH5BVX}")
         try:
             current_rate = float(
                 response['Realtime Currency Exchange Rate']['5. Exchange Rate'])
