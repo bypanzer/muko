@@ -194,7 +194,7 @@ def start(update: Update, context: CallbackContext):
                 reply_markup=InlineKeyboardMarkup(
                     [[
                         InlineKeyboardButton(
-                            text="➕ Yupiter botu qrupuna əlavə et",
+                            text="➕ Yupiter botu qrupuna əlavə et🪐",
                             url="t.me/{}?startgroup=true".format(
                                 context.bot.username))
                     ],
@@ -216,7 +216,7 @@ def start(update: Update, context: CallbackContext):
                      ]]))
     else:
         update.effective_message.reply_text(
-            "Salam ,Mən Yupiter Nəzarətçi Bot, Xidmətinizdəyəm!
+            "Salam ,Mən Yupiter Nəzarətçi Bot 🪐, Xidmətinizdəyəm!
 Hər hansı 1 sualınız olarsa mənimlə PM-da əlaqə qura bilərsiz."
             .format(uptime),
             parse_mode=ParseMode.HTML)
