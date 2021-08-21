@@ -24,7 +24,7 @@ def wall(update: Update, context: CallbackContext):
         caption = query
         term = query.replace(" ", "%20")
         json_rep = r.get(
-            f"https://wall.alphacoders.com/api2.0/get.php?method=wallpaper_info&id=865098}"
+            f"https://wall.alphacoders.com/api2.0/get.php?method=highest_rated&page=1&info_level=2&page=2}"
         ).json()
         if not json_rep.get("success"):
             msg.reply_text(f"Bir problem yarandı! Daha sonra cəhd edin.")
