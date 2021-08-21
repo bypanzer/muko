@@ -209,7 +209,7 @@ def start(update: Update, context: CallbackContext):
                      [
                          InlineKeyboardButton(
                              text="🚑 Dəstək Qrupumuz",
-                             url=f"https://t.me/JLBchat
+                             url=f"https://t.me/JLBchat"
                          InlineKeyboardButton(
                              text="🔔 Yeniliklər kanalı",
                              url="https://t.me/JLBOTS")
