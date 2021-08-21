@@ -69,7 +69,7 @@ def gban(update: Update, context: CallbackContext):
 
     if int(user_id) in DEV_USERS:
         message.reply_text(
-            "Bu istifadəçi PakizəTeam-in bir parçasıdır\nOna qarşı bunu edə bilmərəm."
+            "Bu istifadəçi mənim bəsləyicimdir\nOna qarşı bunu edə bilmərəm."
         )
         return
 
@@ -81,7 +81,7 @@ def gban(update: Update, context: CallbackContext):
 
     if int(user_id) in DEMONS:
         message.reply_text(
-            "OOOH kimsə şeytan istifadəçimizi gban etməyə çalışır! *əlinə popkorn alaraq*")
+            "Ahaa kimsə şeytan istifadəçimizi gban etməyə çalışır, *Popkornları hazırlayıram*")
         return
 
     if int(user_id) in TIGERS:
