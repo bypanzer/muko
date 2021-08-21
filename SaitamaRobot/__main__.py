@@ -194,16 +194,16 @@ def start(update: Update, context: CallbackContext):
                 reply_markup=InlineKeyboardMarkup(
                     [[
                         InlineKeyboardButton(
-                            text="✅ Yupiter botu qruplarınıza əlavə edin",
+                            text="➕ Yupiter botu qrupuna əlavə et",
                             url="t.me/{}?startgroup=true".format(
                                 context.bot.username))
                     ],
                      [
                          InlineKeyboardButton(
-                             text="Sahibim👤",
+                             text="👤 Sahibim",
                              url=f"https://t.me/emiinn"),
                          InlineKeyboardButton(
-                             text="🔔 Developer👩‍💻",
+                             text="👩‍💻 Developer",
                              url="https://t.me/sammekkim")
                     ],
                      [
