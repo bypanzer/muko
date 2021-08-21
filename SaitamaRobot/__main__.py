@@ -200,20 +200,24 @@ def start(update: Update, context: CallbackContext):
                     ],
                      [
                          InlineKeyboardButton(
-                             text="👨‍💻 Sahibim",
-                             url=f"https://t.me/sammekkim"),
+                             text="Sahibim👤",
+                             url=f"https://t.me/emiinn"),
                          InlineKeyboardButton(
-                             text="🔔 Yeniliklər kanalı",
-                             url="https://t.me/JLBOTS")
+                             text="🔔 Developer👩‍💻",
+                             url="https://t.me/sammekkim")
                     ],
                      [
                          InlineKeyboardButton(
                              text="🚑 Dəstək Qrupumuz",
-                             url=f"https://t.me/JLBchat")
+                             url=f"https://t.me/JLBchat
+                         InlineKeyboardButton(
+                             text="🔔 Yeniliklər kanalı",
+                             url="https://t.me/JLBOTS")
                      ]]))
     else:
         update.effective_message.reply_text(
-            "Salam ,Mən Yupiter Nəzarətçi, Xidmətinizdəyəm!"
+            "Salam ,Mən Yupiter Nəzarətçi Bot, Xidmətinizdəyəm!
+Hər hansı 1 sualınız olarsa mənimlə PM-da əlaqə qura bilərsiz."
             .format(uptime),
             parse_mode=ParseMode.HTML)
 
