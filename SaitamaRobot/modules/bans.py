@@ -136,7 +136,7 @@ def temp_ban(update: Update, context: CallbackContext) -> str:
         member = chat.get_member(user_id)
     except BadRequest as excp:
         if excp.message == "User not found":
-            message.reply_text("Bu istifadəçini taba bilmədim.")
+            message.reply_text("Bu istifadəçini tapa bilmədim.")
             return log_message
         else:
             raise
@@ -307,7 +307,7 @@ def unban(update: Update, context: CallbackContext) -> str:
             raise
 
     if user_id == bot.id:
-        message.reply_text("Mən öz banımı aça bilmərəm çünki mən burdayam və banlı deyiləm...?")
+        message.reply_text("Mən öz banımı aça bilmərəm çünki mən burdayam və banlı deyiləm...")
         return log_message
 
     if is_user_in_chat(chat, user_id):
