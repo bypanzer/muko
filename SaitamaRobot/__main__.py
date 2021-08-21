@@ -192,7 +192,7 @@ def start(update: Update, context: CallbackContext):
                 parse_mode=ParseMode.MARKDOWN,
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup(
-                    [[
+                    [[[
                         InlineKeyboardButton(
                             text="➕ Yupiter botu qrupuna əlavə et🪐",
                             url="t.me/{}?startgroup=true".format(
@@ -209,11 +209,11 @@ def start(update: Update, context: CallbackContext):
                      [
                          InlineKeyboardButton(
                              text="🚑 Dəstək Qrupumuz",
-                             url=f"https://t.me/JLBchat"
+                             url=f"https://t.me/JLBchat")
                          InlineKeyboardButton(
                              text="🔔 Yeniliklər kanalı",
                              url="https://t.me/JLBOTS")
-                     ]]))
+                     ]]]))
     else:
         update.effective_message.reply_text(
             "Salam ,Mən Yupiter Nəzarətçi Bot 🪐, Xidmətinizdəyəm!
